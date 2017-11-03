@@ -5,7 +5,23 @@ import { FILTER_COURSES, REQUEST_COURSES_SUCCESS } from '../courses/course.actio
 const courses = [];
 
 const initialState: IAppState = {
-    courses,
+    courses :  [
+      {
+        "id": 1,
+        "name": "Building Apps with React",
+        "topic": "ReactJS"
+      },
+      {
+        "id": 2,
+        "name": "Building Apps with Angular",
+        "topic": "AngularJS"
+      },
+      {
+        "id":3,
+        "name": "Building Apps with Angular and Redux",
+        "topic": "Angular and Redux"
+      }
+    ],
     filteredCourses: courses
 };
 
@@ -24,13 +40,14 @@ function storeCourses(state, action) : IAppState {
   });
 }
 
-export function reducer(state= initialState, action) {
-    switch(action.type) {
-      case FILTER_COURSES:
-        return filterCourses(state, action);
-      case REQUEST_COURSES_SUCCESS:
-        return storeCourses(state, action);
-      default:
-        return state;
-    }
+export function reducer(state = initialState, action) {
+  return state;
+    // switch(action.type) {
+    //   case FILTER_COURSES:
+    //     return filterCourses(state, action);
+    //   case REQUEST_COURSES_SUCCESS:
+    //     return storeCourses(state, action);
+    //   default:
+    //     return state;
+    // }
 }

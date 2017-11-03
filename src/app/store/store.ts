@@ -9,4 +9,4 @@ const devToolsExtension: GenericStoreEnhancer = (window.devToolsExtension)
     ? window.devToolsExtension() : (f) => f;
 
 export const store = createStore<IAppState>(reducer,
-    compose(applyMiddleware(freezeState), devToolsExtension) as GenericStoreEnhancer);
+    compose(applyMiddleware(freezeState), devToolsExtension) as GenericStoreEnhancer); ////
