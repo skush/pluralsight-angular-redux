@@ -7,4 +7,5 @@ declare var window:any;
 const devToolsExtension: GenericStoreEnhancer = (window.devToolsExtension)
     ? window.devToolsExtension() : (f) => f;
 
-export const store = createStore<IAppState>(reducer);
+export const store = createStore<IAppState>(reducer,
+    compose(devToolsExtension) as GenericStoreEnhancer);
